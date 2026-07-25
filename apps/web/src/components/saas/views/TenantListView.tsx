@@ -173,8 +173,8 @@ export default function TenantListView() {
       {editingTenant && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={() => !isSaving && setEditingTenant(null)}></div>
-          <div className="bg-white dark:bg-zinc-900 w-full max-w-md rounded-2xl shadow-xl z-10 border border-slate-200 dark:border-zinc-800 flex flex-col overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-100 dark:border-zinc-800 flex items-center justify-between">
+          <div className="bg-white dark:bg-zinc-900 w-full max-w-md max-h-[90vh] rounded-2xl shadow-xl z-10 border border-slate-200 dark:border-zinc-800 flex flex-col overflow-hidden">
+            <div className="px-6 py-4 border-b border-slate-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
               <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <Settings className="w-4 h-4" /> Edit Configuration
               </h3>
@@ -183,7 +183,7 @@ export default function TenantListView() {
               </button>
             </div>
             
-            <div className="p-6 space-y-4">
+            <div className="p-6 space-y-4 overflow-y-auto flex-1">
               <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ASAP Kerala Name</label>
                 <input 
@@ -211,7 +211,7 @@ export default function TenantListView() {
               </div>
             </div>
 
-            <div className="px-6 py-4 bg-slate-50 dark:bg-zinc-800/50 border-t border-slate-100 dark:border-zinc-800 flex justify-end gap-3">
+            <div className="px-6 py-4 bg-slate-50 dark:bg-zinc-800/50 border-t border-slate-100 dark:border-zinc-800 flex justify-end gap-3 shrink-0">
               <button 
                 onClick={() => setEditingTenant(null)}
                 disabled={isSaving}
