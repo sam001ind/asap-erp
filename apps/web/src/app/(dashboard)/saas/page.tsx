@@ -18,7 +18,7 @@ function SaaSDashboardView() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm">
-          <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Active Tenants</p>
+          <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Active ASAP Kerala Instances</p>
           <p className="text-3xl font-bold text-slate-900 dark:text-white mt-2">{activeTenants}</p>
           <p className="text-xs text-emerald-500 mt-2 font-medium">+{tenants.length - activeTenants} pending provisioning</p>
         </div>
@@ -104,8 +104,8 @@ function SaaSModuleContent() {
       <div className="p-6 md:p-8 pt-6 max-w-[1600px] mx-auto relative z-10">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">SaaS Control Panel</h1>
-            <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">Super Admin Dashboard for Multi-Tenant Database Provisioning.</p>
+            <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Super Admin SaaS Control Panel</h1>
+            <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">Super Admin Dashboard for ASAP Kerala Instances.</p>
           </div>
         </div>
         {content}

@@ -25,7 +25,7 @@ export default function TenantListView() {
       <div className="p-6 border-b border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/40 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <Server className="h-5 w-5 text-indigo-500" /> Active Tenants
+            <Server className="h-5 w-5 text-indigo-500" /> Active ASAP Kerala Instances
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Manage isolated databases and CSP instances.</p>
         </div>
@@ -45,7 +45,7 @@ export default function TenantListView() {
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900/40">
-              <th className="p-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Tenant Name</th>
+              <th className="p-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">ASAP Kerala Name</th>
               <th className="p-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Plan & Domain</th>
               <th className="p-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Status</th>
               <th className="p-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Security</th>
@@ -136,14 +136,14 @@ export default function TenantListView() {
                               onClick={() => { updateTenantStatus(tenant.id, tenant.databaseStatus, "Active"); setOpenDropdownId(null); }}
                               className="px-4 py-2 text-sm text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 flex items-center gap-2"
                             >
-                              <PlayCircle className="w-4 h-4" /> Reactivate Tenant
+                              <PlayCircle className="w-4 h-4" /> Reactivate Instance
                             </button>
                          ) : (
                             <button 
                               onClick={() => { updateTenantStatus(tenant.id, tenant.databaseStatus, "Suspended"); setOpenDropdownId(null); }}
                               className="px-4 py-2 text-sm text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/20 flex items-center gap-2"
                             >
-                              <PauseCircle className="w-4 h-4" /> Suspend Tenant
+                              <PauseCircle className="w-4 h-4" /> Suspend Instance
                             </button>
                          )}
 
@@ -162,7 +162,7 @@ export default function TenantListView() {
             {filteredTenants.length === 0 && (
               <tr>
                 <td colSpan={6} className="p-8 text-center text-slate-500 dark:text-slate-400">
-                  No active tenants found. Provision a new database to get started.
+                  No active instances found. Provision a new database to get started.
                 </td>
               </tr>
             )}
@@ -185,7 +185,7 @@ export default function TenantListView() {
             
             <div className="p-6 space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Tenant Name</label>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ASAP Kerala Name</label>
                 <input 
                   type="text" 
                   value={editingTenant.name} 
