@@ -1,0 +1,476 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-arm64-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres.iqllfzqkrdtipsxeunow:cByt6QQdm3fWTTZ1@aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres"
+}
+
+model Tenant {
+  id        String   @id @default(uuid())
+  name      String
+  domain    String?  @unique
+  status    String   @default("Active")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  logoUrl   String?
+  roles     Role[]
+  users     User[]
+}
+
+model User {
+  id              String          @id @default(uuid())
+  email           String          @unique
+  createdAt       DateTime        @default(now())
+  name            String
+  password        String
+  roleId          String
+  updatedAt       DateTime        @updatedAt
+  tenantId        String?
+  circulations    Circulation[]
+  employeeProfile Employee?
+  guardianProfile Guardian?
+  studentProfile  StudentProfile?
+  role            Role            @relation(fields: [roleId], references: [id])
+  tenant          Tenant?         @relation(fields: [tenantId], references: [id])
+}
+
+model Role {
+  id          String       @id @default(uuid())
+  name        String       @unique
+  description String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  tenantId    String?
+  tenant      Tenant?      @relation(fields: [tenantId], references: [id])
+  users       User[]
+  permissions Permission[] @relation("PermissionToRole")
+}
+
+model Permission {
+  id        String   @id @default(uuid())
+  action    String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  roles     Role[]   @relation("PermissionToRole")
+}
+
+model StudentProfile {
+  id                  String               @id @default(uuid())
+  userId              String               @unique
+  admissionNo         String               @unique
+  dateOfBirth         DateTime
+  gender              String
+  bloodGroup          String?
+  guardianId          String?
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  attendances         Attendance[]
+  documents           Document[]
+  examResults         ExamResult[]
+  feePayments         FeePayment[]
+  hostelAllocation    HostelAllocation?
+  guardian            Guardian?            @relation(fields: [guardianId], references: [id])
+  user                User                 @relation(fields: [userId], references: [id])
+  transportAllocation TransportAllocation?
+}
+
+model Guardian {
+  id        String           @id @default(uuid())
+  userId    String           @unique
+  phone     String
+  relation  String
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+  user      User             @relation(fields: [userId], references: [id])
+  students  StudentProfile[]
+}
+
+model Document {
+  id           String         @id @default(uuid())
+  studentId    String
+  documentType String
+  fileUrl      String
+  uploadedAt   DateTime       @default(now())
+  student      StudentProfile @relation(fields: [studentId], references: [id])
+}
+
+model Attendance {
+  id            String         @id @default(uuid())
+  studentId     String
+  date          DateTime
+  status        String
+  checkInMethod String         @default("MANUAL")
+  remarks       String?
+  recordedAt    DateTime       @default(now())
+  student       StudentProfile @relation(fields: [studentId], references: [id])
+}
+
+model Examination {
+  id        String       @id @default(uuid())
+  name      String
+  term      String
+  startDate DateTime
+  endDate   DateTime
+  createdAt DateTime     @default(now())
+  results   ExamResult[]
+}
+
+model ExamResult {
+  id            String         @id @default(uuid())
+  examinationId String
+  studentId     String
+  subject       String
+  marksObtained Float
+  totalMarks    Float
+  grade         String?
+  recordedAt    DateTime       @default(now())
+  examination   Examination    @relation(fields: [examinationId], references: [id])
+  student       StudentProfile @relation(fields: [studentId], references: [id])
+}
+
+model FeeStructure {
+  id        String       @id @default(uuid())
+  name      String
+  amount    Float
+  dueDate   DateTime
+  term      String
+  createdAt DateTime     @default(now())
+  payments  FeePayment[]
+}
+
+model FeePayment {
+  id             String         @id @default(uuid())
+  studentId      String
+  feeStructureId String
+  amountPaid     Float
+  paymentDate    DateTime       @default(now())
+  status         String
+  receiptNo      String         @unique
+  feeStructure   FeeStructure   @relation(fields: [feeStructureId], references: [id])
+  student        StudentProfile @relation(fields: [studentId], references: [id])
+}
+
+model Employee {
+  id              String               @id @default(uuid())
+  userId          String               @unique
+  employeeId      String               @unique
+  department      String
+  designation     String
+  joiningDate     DateTime
+  baseSalary      Float
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+  accountNo       String?
+  bankName        String?
+  ifscCode        String?
+  status          String               @default("ACTIVE")
+  taxId           String?
+  user            User                 @relation(fields: [userId], references: [id])
+  attendances     EmployeeAttendance[]
+  leaveBalances   LeaveBalance[]
+  leaves          LeaveRequest[]
+  payrolls        Payroll[]
+  salaryStructure SalaryStructure?
+}
+
+model EmployeeAttendance {
+  id            String    @id @default(uuid())
+  employeeId    String
+  date          DateTime
+  status        String
+  checkInMethod String    @default("MANUAL")
+  checkInTime   DateTime?
+  checkOutTime  DateTime?
+  remarks       String?
+  recordedAt    DateTime  @default(now())
+  employee      Employee  @relation(fields: [employeeId], references: [id])
+}
+
+model Payroll {
+  id                String           @id @default(uuid())
+  employeeId        String
+  month             Int
+  year              Int
+  basicPay          Float
+  allowances        Float
+  deductions        Float
+  netPay            Float
+  status            String
+  processedAt       DateTime         @default(now())
+  salaryStructureId String?
+  employee          Employee         @relation(fields: [employeeId], references: [id])
+  salaryStructure   SalaryStructure? @relation(fields: [salaryStructureId], references: [id])
+}
+
+model LeaveRequest {
+  id               String   @id @default(uuid())
+  employeeId       String
+  leaveType        String
+  startDate        DateTime
+  endDate          DateTime
+  reason           String
+  status           String
+  appliedAt        DateTime @default(now())
+  reviewerComments String?
+  updatedAt        DateTime @updatedAt
+  employee         Employee @relation(fields: [employeeId], references: [id])
+}
+
+model LeaveBalance {
+  id         String   @id @default(uuid())
+  employeeId String
+  year       Int
+  leaveType  String
+  totalDays  Float
+  usedDays   Float    @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  employee   Employee @relation(fields: [employeeId], references: [id])
+
+  @@unique([employeeId, year, leaveType])
+}
+
+model SalaryStructure {
+  id         String            @id @default(uuid())
+  employeeId String            @unique
+  createdAt  DateTime          @default(now())
+  updatedAt  DateTime          @updatedAt
+  payrolls   Payroll[]
+  components SalaryComponent[]
+  employee   Employee          @relation(fields: [employeeId], references: [id])
+}
+
+model SalaryComponent {
+  id                String          @id @default(uuid())
+  salaryStructureId String
+  name              String
+  type              String
+  amount            Float
+  createdAt         DateTime        @default(now())
+  salaryStructure   SalaryStructure @relation(fields: [salaryStructureId], references: [id])
+}
+
+model Book {
+  id              String        @id @default(uuid())
+  isbn            String        @unique
+  title           String
+  author          String
+  totalCopies     Int
+  availableCopies Int
+  createdAt       DateTime      @default(now())
+  circulations    Circulation[]
+}
+
+model Circulation {
+  id         String    @id @default(uuid())
+  bookId     String
+  userId     String
+  issueDate  DateTime  @default(now())
+  dueDate    DateTime
+  returnDate DateTime?
+  status     String
+  book       Book      @relation(fields: [bookId], references: [id])
+  user       User      @relation(fields: [userId], references: [id])
+}
+
+model TransportRoute {
+  id            String                @id @default(uuid())
+  routeName     String                @unique
+  driverName    String
+  vehicleNumber String
+  capacity      Int
+  allocations   TransportAllocation[]
+}
+
+model TransportAllocation {
+  id          String         @id @default(uuid())
+  routeId     String
+  studentId   String         @unique
+  pickupPoint String
+  allocatedAt DateTime       @default(now())
+  route       TransportRoute @relation(fields: [routeId], references: [id])
+  student     StudentProfile @relation(fields: [studentId], references: [id])
+}
+
+model HostelRoom {
+  id          String             @id @default(uuid())
+  roomNumber  String             @unique
+  capacity    Int
+  occupancy   Int                @default(0)
+  allocations HostelAllocation[]
+}
+
+model HostelAllocation {
+  id          String         @id @default(uuid())
+  roomId      String
+  studentId   String         @unique
+  allocatedAt DateTime       @default(now())
+  room        HostelRoom     @relation(fields: [roomId], references: [id])
+  student     StudentProfile @relation(fields: [studentId], references: [id])
+}
+
+model Department {
+  id        String   @id @default(cuid())
+  name      String
+  industry  String
+  members   Int      @default(0)
+  connected Int      @default(0)
+  logo      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Channel {
+  id        String   @id @default(cuid())
+  platform  String
+  name      String
+  handle    String
+  color     String
+  bg        String
+  status    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  content   String
+  platforms String
+  time      String
+  date      DateTime
+  author    String
+  status    String
+  color     String
+  likes     Int      @default(0)
+  comments  Int      @default(0)
+  error     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  user      String
+  handle    String
+  platform  String
+  color     String
+  time      String
+  text      String
+  status    String
+  replies   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Stream {
+  id        String   @id @default(cuid())
+  title     String
+  keyword   String
+  platform  String
+  color     String
+  posts     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AcademicClass {
+  id          String       @id @default(uuid())
+  name        String
+  grade       Int
+  section     String
+  createdAt   DateTime     @default(now())
+  assignments Assignment[]
+  subjects    Subject[]
+}
+
+model Subject {
+  id             String          @id @default(uuid())
+  name           String
+  code           String          @unique
+  classId        String
+  createdAt      DateTime        @default(now())
+  assignments    Assignment[]
+  lessonPlans    LessonPlan[]
+  studyMaterials StudyMaterial[]
+  academicClass  AcademicClass   @relation(fields: [classId], references: [id])
+}
+
+model LessonPlan {
+  id          String   @id @default(uuid())
+  subjectId   String
+  topic       String
+  description String
+  targetDate  DateTime
+  completed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  subject     Subject  @relation(fields: [subjectId], references: [id])
+}
+
+model Assignment {
+  id            String        @id @default(uuid())
+  title         String
+  description   String
+  subjectId     String
+  classId       String
+  dueDate       DateTime
+  totalMarks    Int
+  createdAt     DateTime      @default(now())
+  academicClass AcademicClass @relation(fields: [classId], references: [id])
+  subject       Subject       @relation(fields: [subjectId], references: [id])
+}
+
+model StudyMaterial {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  fileUrl     String
+  type        String
+  subjectId   String
+  uploadedAt  DateTime @default(now())
+  subject     Subject  @relation(fields: [subjectId], references: [id])
+}
+
+model WebsiteTheme {
+  id              String   @id @default(uuid())
+  tenantId        String   @default("default")
+  siteName        String
+  tagline         String?
+  logoUrl         String?
+  primaryColor    String   @default("#3b82f6")
+  secondaryColor  String   @default("#1e40af")
+  headingFont     String   @default("Inter")
+  bodyFont        String   @default("Inter")
+  roundedCorners  Boolean  @default(true)
+  darkModeDefault Boolean  @default(false)
+  navLayout       String   @default("centered")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model WebsiteAuditLog {
+  id           String   @id @default(uuid())
+  action       String
+  resource     String
+  resourceType String
+  user         String
+  status       String
+  details      String?
+  timestamp    DateTime @default(now())
+}
+
+model AdmissionLead {
+  id              String   @id @default(uuid())
+  studentName     String
+  parentName      String
+  email           String
+  phone           String
+  gradeApplied    String
+  status          String   @default("New") // "New", "Contacted", "Interview", "Waitlisted", "Admitted", "Rejected"
+  source          String   @default("Website")
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
