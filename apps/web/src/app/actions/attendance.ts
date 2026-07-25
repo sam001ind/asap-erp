@@ -3,7 +3,7 @@
 import { prisma } from "@repo/database";
 import { revalidatePath } from "next/cache";
 
-export async function getStudentsByGrade(gradeId?: string) {
+export async function getCandidatesByGrade(gradeId?: string) {
   try {
     // For this prototype, we'll fetch all students and their users if gradeId isn't required yet
     // Assuming there's a way to filter, but here we just get all students
