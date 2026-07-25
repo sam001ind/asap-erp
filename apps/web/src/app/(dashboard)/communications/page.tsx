@@ -143,7 +143,7 @@ function CommunicationsContent() {
                       </div>
                       
                       <div className="bg-[#dcf8c6] dark:bg-[#056162] p-3 rounded-xl rounded-tr-sm self-end max-w-[70%] shadow-sm text-sm">
-                         <p>Hi Sarah, thanks for your interest in My Institution! Would you like to schedule a campus tour?</p>
+                         <p>Hi Sarah, thanks for your interest in ASAP Kerala! Would you like to schedule a campus tour?</p>
                          <span className="text-[10px] text-[#075e54]/70 dark:text-white/50 block text-right mt-1">10:05 AM ✓✓</span>
                       </div>
                       

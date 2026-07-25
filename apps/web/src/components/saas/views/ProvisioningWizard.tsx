@@ -53,7 +53,7 @@ export default function ProvisioningWizard() {
     setTimeout(() => setLogs(l => [...l, `[DB] Connection to ${dbEngine} successful. Target DB isolated.`]), 3000);
     setTimeout(() => setLogs(l => [...l, `[PRISMA] Applying ${dbEngine === 'MongoDB' ? 'NoSQL indexes' : 'schema migrations (prisma db push)'}...`]), 4000);
     setTimeout(() => setLogs(l => [...l, `  - Created ${dbEngine === 'MongoDB' ? 'collection' : 'table'}: Users`]), 4500);
-    setTimeout(() => setLogs(l => [...l, `  - Created ${dbEngine === 'MongoDB' ? 'collection' : 'table'}: Students`]), 4800);
+    setTimeout(() => setLogs(l => [...l, `  - Created ${dbEngine === 'MongoDB' ? 'collection' : 'table'}: Candidates`]), 4800);
     setTimeout(() => setLogs(l => [...l, `  - Created ${dbEngine === 'MongoDB' ? 'collection' : 'table'}: Fees`]), 5100);
     setTimeout(() => setLogs(l => [...l, `[PRISMA] ${dbEngine === 'MongoDB' ? 'Collections' : 'Schemas'} generated successfully.`]), 6000);
     setTimeout(() => setLogs(l => [...l, "[SEED] Seeding default roles and SuperAdmin user..."]), 7000);
@@ -105,12 +105,12 @@ export default function ProvisioningWizard() {
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">SDC / CSP Name</label>
-                <input type="text" value={tenantName} onChange={e => setTenantName(e.target.value)} placeholder="e.g. Springfield High" className="w-full px-4 py-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" />
+                <input type="text" value={tenantName} onChange={e => setTenantName(e.target.value)} placeholder="e.g. ASAP Kerala - Trivandrum CSP" className="w-full px-4 py-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Subdomain Mapping</label>
                 <div className="flex">
-                  <input type="text" value={domain} onChange={e => setDomain(e.target.value)} placeholder="springfield" className="w-full px-4 py-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-zinc-950 border border-r-0 border-slate-200 dark:border-zinc-800 rounded-l-xl focus:ring-2 focus:ring-indigo-500 outline-none" />
+                  <input type="text" value={domain} onChange={e => setDomain(e.target.value)} placeholder="trivandrum" className="w-full px-4 py-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-zinc-950 border border-r-0 border-slate-200 dark:border-zinc-800 rounded-l-xl focus:ring-2 focus:ring-indigo-500 outline-none" />
                   <span className="px-4 py-2 bg-slate-50 dark:bg-zinc-900/40 dark:bg-zinc-900/40 dark:bg-zinc-800 border border-l-0 border-slate-200 dark:border-zinc-800 rounded-r-xl text-slate-500 dark:text-slate-400">.erp.example.com</span>
                 </div>
               </div>

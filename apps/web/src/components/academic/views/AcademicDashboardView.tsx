@@ -142,7 +142,7 @@ export default function AcademicDashboardView() {
             <AlertCircle className="h-6 w-6 text-amber-500 shrink-0" />
             <div className="flex-1">
               <h4 className="text-sm font-bold text-amber-900 dark:text-amber-500">Syllabus Laging Behind</h4>
-              <p className="text-xs text-amber-700 dark:text-amber-600/80 mt-1">Class 10-B Mathematics is currently 15% behind the Master Lesson Plan.</p>
+              <p className="text-xs text-amber-700 dark:text-amber-600/80 mt-1">Class 10-B React.js Frontend is currently 15% behind the Master Lesson Plan.</p>
             </div>
             <button className="px-4 py-1.5 bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400 text-sm font-semibold rounded-lg hover:bg-amber-200 transition-colors">Review</button>
           </div>

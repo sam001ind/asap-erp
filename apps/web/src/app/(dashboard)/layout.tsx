@@ -90,7 +90,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 <img src={tenantLogo} alt="Logo" className="w-8 h-8 rounded-full object-cover border border-white/30 bg-white/10" />
               )}
               <div>
-                <h2 className="text-xl font-bold tracking-tight truncate w-full drop-shadow-sm">My Institution</h2>
+                <h2 className="text-xl font-bold tracking-tight truncate w-full drop-shadow-sm">ASAP Kerala</h2>
                 <p className="text-blue-100 text-xs font-medium mt-0.5 uppercase tracking-wider truncate w-full opacity-90">
                   {activeModulePath.replace("/", "") || "Module"}
                 </p>
@@ -153,7 +153,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 {activeModulePath.replace("/", "")}
               </h1>
               <h1 className="font-bold text-lg text-zinc-900 dark:text-white md:hidden">
-                My Institution
+                ASAP Kerala
               </h1>
 
               {/* Environment Indicator */}
@@ -260,11 +260,11 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               {/* User Profile & Logout */}
               <div className="hidden sm:flex items-center gap-3 cursor-pointer group bg-white dark:bg-zinc-900/50 backdrop-blur-md/50 hover:bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-zinc-800/30 dark:hover:bg-zinc-800 backdrop-blur-md px-2 py-1.5 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md border border-white/40 dark:border-white/5">
                 <div className="text-right pl-2">
-                  <p className="text-sm font-semibold text-zinc-900 dark:text-white">Admin User</p>
-                  <p className="text-xs text-red-500 font-medium opacity-0 group-hover:opacity-100 transition-opacity absolute">Logout</p>
+                  <p className="text-sm font-semibold text-zinc-900 dark:text-white">Super Admin</p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">superadmin@asapkerala.gov.in</p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 text-white flex items-center justify-center font-bold shadow-lg shadow-indigo-500/30 transform group-hover:scale-105 transition-all duration-300 border border-white/20">
-                  A
+                <div className="w-9 h-9 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold shadow-md shadow-indigo-600/20 transform group-hover:scale-105 transition-all duration-300 border border-white/20">
+                  SA
                 </div>
               </div>
             </div>

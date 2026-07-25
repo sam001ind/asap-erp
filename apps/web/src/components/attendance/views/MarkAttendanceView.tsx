@@ -2,10 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { Users, Fingerprint, CalendarCheck, Search, Loader2 } from "lucide-react";
-import { getStudentsByGrade, getAttendanceByDate, markAttendance } from "@/app/actions/attendance";
+import { getCandidatesByGrade, getAttendanceByDate, markAttendance } from "@/app/actions/attendance";
 
-type StudentData = {
-  id: string; // StudentProfile ID
+type CandidateData = {
+  id: string; // CandidateProfile ID
   user: {
     name: string;
     email: string;
@@ -24,7 +24,7 @@ type AttendanceRecord = {
 export default function MarkAttendanceView() {
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
   const [syncingBMD, setSyncingBMD] = useState(false);
-  const [students, setStudents] = useState<StudentData[]>([]);
+  const [students, setCandidates] = useState<CandidateData[]>([]);
   const [attendanceRecords, setAttendanceRecords] = useState<AttendanceRecord[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -35,12 +35,12 @@ export default function MarkAttendanceView() {
   const fetchData = async () => {
     setLoading(true);
     const [studentsRes, attendanceRes] = await Promise.all([
-      getStudentsByGrade(),
+      getCandidatesByGrade(),
       getAttendanceByDate(date)
     ]);
     
     if (studentsRes.success && studentsRes.students) {
-      setStudents(studentsRes.students as any);
+      setCandidates(studentsRes.students as any);
     }
     
     if (attendanceRes.success && attendanceRes.records) {

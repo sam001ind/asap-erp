@@ -43,7 +43,7 @@ const mockRecords: AttendanceRecord[] = [
   {
     id: "2",
     userId: "stu_1",
-    userName: "John Doe (10-A)",
+    userName: "John Doe (Candidate) (10-A)",
     role: "STUDENT",
     date: new Date(),
     status: "PRESENT",

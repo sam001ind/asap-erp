@@ -108,7 +108,7 @@ export const Blocks: Record<string, React.FC<{ props: any }>> = {
             </div>
           </div>
           
-          <a href="/site/student-services" className="text-sm font-semibold text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 hover:text-blue-600 dark:text-zinc-300 transition-colors">{props.navStudent || "Student Services"}</a>
+          <a href="/site/student-services" className="text-sm font-semibold text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 hover:text-blue-600 dark:text-zinc-300 transition-colors">{props.navCandidate || "Candidate Services"}</a>
         </nav>
 
         {/* CTA & Mobile Menu */}
@@ -164,7 +164,7 @@ export const Blocks: Record<string, React.FC<{ props: any }>> = {
     <div className={`py-12 border-y border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-black ${props.typographyClass || ''}`}>
       <div className="max-w-6xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x-0 md:divide-x divide-y md:divide-y-0 divide-zinc-100 dark:divide-zinc-800 dark:divide-zinc-800 dark:divide-zinc-900">
         {[
-          { label: props.stat1Label || "Students Trained", value: props.stat1Value || "10,000+" },
+          { label: props.stat1Label || "Candidates Trained", value: props.stat1Value || "10,000+" },
           { label: props.stat2Label || "Courses Offered", value: props.stat2Value || "50+" },
           { label: props.stat3Label || "Placement Percentage", value: props.stat3Value || "95%" },
           { label: props.stat4Label || "Industry Partners", value: props.stat4Value || "200+" }
@@ -227,7 +227,7 @@ export const Blocks: Record<string, React.FC<{ props: any }>> = {
   Testimonials: ({ props }: { props: any }) => (
     <div className={`py-24 bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-black ${props.typographyClass || ''}`}>
       <div className="max-w-4xl mx-auto px-8 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-16">{props.title || "Student Voices"}</h2>
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-16">{props.title || "Candidate Voices"}</h2>
         <div className="text-xl md:text-3xl font-serif italic text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 dark:text-zinc-400 leading-relaxed mb-8" dangerouslySetInnerHTML={{ __html: props.quote ? `"${props.quote}"` : "\"The faculty and facilities here are unparalleled. It truly prepared me for my career in ways I couldn't have imagined.\"" }} />
         <div className="font-bold text-lg">{props.author || "Jane Doe, Class of '24"}</div>
       </div>
@@ -516,12 +516,12 @@ export function resolveSectionProps(props: any, lang: string) {
 
 
 export const DEFAULT_PROPS: Record<string, any> = {
-  HeaderNavigation: { logoIcon: "🏛️", logoText: "Institution", ctaText: "Apply Now", navHome: "Home", navAbout: "About Us", navAbout1: "Overview", navAbout2: "Leadership Team", navAbout3: "History & Mission", navAcad: "Academics", navAcad1: "Overview", navAcad2: "Programs & Courses", navAcad3: "Faculty", navAdm: "Enrollments", navAdm1: "Overview", navAdm2: "Fee Structure", navAdm3: "Apply Now", navCampus: "Campus Life", navCampus1: "Overview", navCampus2: "Events & News", navStudent: "Student Services" },
+  HeaderNavigation: { logoIcon: "🏛️", logoText: "Institution", ctaText: "Apply Now", navHome: "Home", navAbout: "About Us", navAbout1: "Overview", navAbout2: "Leadership Team", navAbout3: "History & Mission", navAcad: "Academics", navAcad1: "Overview", navAcad2: "Programs & Courses", navAcad3: "Faculty", navAdm: "Enrollments", navAdm1: "Overview", navAdm2: "Fee Structure", navAdm3: "Apply Now", navCampus: "Campus Life", navCampus1: "Overview", navCampus2: "Events & News", navCandidate: "Candidate Services" },
   HeroBanner: { title: "Excellence in Education.", subtitle: "A world-class curriculum designed to shape the innovators and leaders of tomorrow.", ctaText: "Apply Now" },
-  StatsRibbon: { stat1Label: "Students Trained", stat1Value: "10,000+", stat2Label: "Courses Offered", stat2Value: "50+", stat3Label: "Placement Percentage", stat3Value: "95%", stat4Label: "Industry Partners", stat4Value: "200+" },
+  StatsRibbon: { stat1Label: "Candidates Trained", stat1Value: "10,000+", stat2Label: "Courses Offered", stat2Value: "50+", stat3Label: "Placement Percentage", stat3Value: "95%", stat4Label: "Industry Partners", stat4Value: "200+" },
   AboutSection: { title: "Our Vision & Mission", content: "We are dedicated to providing an enriching environment that fosters intellectual curiosity, emotional intelligence, and a strong sense of community.", awardTitle: "Award Winning Institution", awardSubtitle: "Ranked #1 in Regional Excellence" },
   ProgramsGrid: { title: "Featured Courses & Programs", prog1Name: "Computer Science B.Tech", prog1Duration: "4 Years", prog1Fee: "$15,000/yr", prog1Seats: "120 Seats", prog2Name: "MBA in Finance", prog2Duration: "2 Years", prog2Fee: "$25,000/yr", prog2Seats: "60 Seats", prog3Name: "Data Science Bootcamp", prog3Duration: "6 Months", prog3Fee: "$5,000", prog3Seats: "30 Seats" },
-  Testimonials: { title: "Student Voices", quote: "The faculty here goes above and beyond...", author: "Jane Doe, Class of '24", role: "Software Engineer at Google" },
+  Testimonials: { title: "Candidate Voices", quote: "The faculty here goes above and beyond...", author: "Jane Doe, Class of '24", role: "Software Engineer at Google" },
   LeadCaptureForm: { title: "Ready to Join Us?", subtitle: "Provide your details and our admissions team will be in touch shortly.", labelName: "Full Name", labelEmail: "Email Address", labelProgram: "Program of Interest", opt1: "Foundation Course", opt2: "Advanced Skill Program", opt3: "DVoc Program", btnText: "Submit Inquiry" },
   UpcomingEvents: { btnText: "View All Events →", title: "Upcoming Events", event1Title: "Open House 2026", event1Date: "June 15, 2026", event1Venue: "Main Auditorium", event2Title: "Alumni Meet", event2Date: "July 22, 2026", event2Venue: "Virtual", event3Title: "Tech Symposium", event3Date: "August 10, 2026", event3Venue: "Innovation Center" },
   RecruiterLogos: { title: "Our Top Recruiters" },
@@ -578,7 +578,7 @@ export function getPageTemplate(pageId: string): Section[] {
     case 'student-services':
       return [
         baseHeader,
-        { id: 'sec-hero', type: 'HeroBanner', props: { title: 'Student Support.', subtitle: 'We are here to support your academic and personal growth.' } },
+        { id: 'sec-hero', type: 'HeroBanner', props: { title: 'Candidate Support.', subtitle: 'We are here to support your academic and personal growth.' } },
         { id: 'sec-text', type: 'TextContent', props: { title: 'Our Support Services', paragraph1: 'Our institution offers a wide range of services to support students...', paragraph2: 'From counseling to academic advising, we have you covered.' } },
         baseFooter
       ];

@@ -62,7 +62,7 @@ export default async function Home() {
           {tenantName}
         </div>
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-6">
-          My Institution
+          ASAP Kerala
         </h1>
         <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
           Your centralized hub for academic, administrative, and campus operations.

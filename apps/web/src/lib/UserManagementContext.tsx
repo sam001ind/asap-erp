@@ -73,8 +73,8 @@ const initialRoles: Role[] = [
     granularPermissions: {}
   },
   {
-    id: "role_academic_head",
-    name: "Academic Head",
+    id: "role_center_head",
+    name: "Center Head",
     description: "Manages all academic operations, curriculum, and faculty.",
     allowedMenus: moduleMenus["/academic"].map(m => `/academic/${m.id}`),
     requireMfa: false,
@@ -82,8 +82,8 @@ const initialRoles: Role[] = [
     granularPermissions: {}
   },
   {
-    id: "role_student",
-    name: "Student",
+    id: "role_candidate",
+    name: "Candidate",
     description: "Basic student access to attendance, exams, and hostel.",
     allowedMenus: [
       "/attendance/my", "/examinations/upcoming", "/examinations/results", "/hostel/my-room", "/fees/dues"
@@ -100,9 +100,9 @@ const mockSessions = [
 ];
 
 const initialUsers: User[] = [
-  { id: "usr_1", name: "Alice Admin", email: "alice@enterprise.edu", roleId: "role_admin", status: "Active", lastLogin: new Date(), mfaEnabled: true, lastIp: "192.168.1.45", activeSessions: mockSessions },
-  { id: "usr_2", name: "Prof. Michael Chang", email: "michael.c@enterprise.edu", roleId: "role_academic_head", status: "Active", lastLogin: new Date(Date.now() - 86400000), mfaEnabled: false, lastIp: "10.0.0.12", activeSessions: [mockSessions[0]] },
-  { id: "usr_3", name: "John Doe", email: "john.d@student.enterprise.edu", roleId: "role_student", status: "Active", mfaEnabled: false, lastIp: "192.168.0.101", activeSessions: [] },
+  { id: "usr_1", name: "Alice System Admin", email: "alice@asapkerala.gov.in", roleId: "role_admin", status: "Active", lastLogin: new Date(), mfaEnabled: true, lastIp: "192.168.1.45", activeSessions: mockSessions },
+  { id: "usr_2", name: "Master Trainer Michael Chang", email: "michael@asapkerala.gov.in", roleId: "role_center_head", status: "Active", lastLogin: new Date(Date.now() - 86400000), mfaEnabled: false, lastIp: "10.0.0.12", activeSessions: [mockSessions[0]] },
+  { id: "usr_3", name: "John Doe (Candidate)", email: "john@student.asapkerala.gov.in", roleId: "role_candidate", status: "Active", mfaEnabled: false, lastIp: "192.168.0.101", activeSessions: [] },
 ];
 
 const initialAuditLogs: AuditLog[] = [

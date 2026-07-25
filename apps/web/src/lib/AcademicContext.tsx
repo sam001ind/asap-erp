@@ -38,21 +38,21 @@ const AcademicContext = createContext<AcademicContextType | undefined>(undefined
 const mockClasses: AcademicClass[] = [
   {
     id: "class_10a",
-    name: "Class 10-A",
+    name: "Full Stack Developer Cohort 1",
     subjects: [
       {
-        id: "subj_math", name: "Mathematics", code: "MTH-101", credits: 4, type: "Core",
+        id: "subj_math", name: "React.js Frontend", code: "FSD-REACT", credits: 4, type: "Core",
         lessonPlans: [
-          { id: "lp_1", topic: "Quadratic Equations", description: "Introduction and roots", targetDate: new Date(), completed: true },
-          { id: "lp_2", topic: "Trigonometry Basics", description: "Sine, Cosine", targetDate: new Date(Date.now() + 86400000), completed: false },
+          { id: "lp_1", topic: "React Hooks", description: "useState and useEffect", targetDate: new Date(), completed: true },
+          { id: "lp_2", topic: "Context API", description: "Global State Management", targetDate: new Date(Date.now() + 86400000), completed: false },
         ],
         assignments: [
-          { id: "ass_1", title: "Algebra Worksheet", description: "Solve page 42.", dueDate: new Date(Date.now() + 86400000 * 2), totalMarks: 50 },
+          { id: "ass_1", title: "React Components Assignment", description: "Solve page 42.", dueDate: new Date(Date.now() + 86400000 * 2), totalMarks: 50 },
         ],
         studyMaterials: []
       },
       {
-        id: "subj_phy", name: "Physics", code: "PHY-101", credits: 4, type: "Core",
+        id: "subj_phy", name: "Node.js Backend", code: "FSD-NODE", credits: 4, type: "Core",
         lessonPlans: [], assignments: [], studyMaterials: []
       }
     ]
@@ -60,9 +60,9 @@ const mockClasses: AcademicClass[] = [
 ];
 
 const mockFaculty: Faculty[] = [
-  { id: "fac_1", name: "Dr. Sarah Jenkins", department: "Science", maxHours: 20, currentHours: 18 },
-  { id: "fac_2", name: "Prof. Michael Chang", department: "Mathematics", maxHours: 18, currentHours: 18 },
-  { id: "fac_3", name: "Dr. Emily Blunt", department: "Arts", maxHours: 24, currentHours: 12 },
+  { id: "fac_1", name: "Trainer Sarah Jenkins", department: "Science", maxHours: 20, currentHours: 18 },
+  { id: "fac_2", name: "Master Trainer Michael Chang", department: "React.js Frontend", maxHours: 18, currentHours: 18 },
+  { id: "fac_3", name: "Trainer Emily Blunt", department: "Arts", maxHours: 24, currentHours: 12 },
 ];
 
 const mockRooms: Room[] = [
@@ -78,8 +78,8 @@ const mockEvents: CalendarEvent[] = [
 ];
 
 const mockOutcomes: LearningOutcome[] = [
-  { id: "lo_1", code: "PO-1", description: "Engineering Knowledge & Application", mappedSubjects: ["MTH-101", "PHY-101"] },
-  { id: "lo_2", code: "PO-2", description: "Problem Analysis", mappedSubjects: ["MTH-101"] },
+  { id: "lo_1", code: "PO-1", description: "Engineering Knowledge & Application", mappedSubjects: ["FSD-REACT", "FSD-NODE"] },
+  { id: "lo_2", code: "PO-2", description: "Problem Analysis", mappedSubjects: ["FSD-REACT"] },
 ];
 
 export function AcademicProvider({ children }: { children: ReactNode }) {

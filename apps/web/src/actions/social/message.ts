@@ -30,7 +30,7 @@ export async function replyToMessage(id: string, replyText: string) {
   const currentReplies = JSON.parse(msg.replies) as any[];
   const newReply = {
     id: Date.now().toString(),
-    author: "My Institution",
+    author: "ASAP Kerala",
     text: replyText,
     time: "Just now"
   };

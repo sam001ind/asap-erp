@@ -200,7 +200,7 @@ export default function UserDirectoryView() {
             <form onSubmit={handleAddSubmit} className="p-6 space-y-4">
               <div>
                 <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">Full Name</label>
-                <input required type="text" value={newUser.name || ""} onChange={e => setNewUser({...newUser, name: e.target.value})} className="w-full bg-slate-50 dark:bg-zinc-900/40 dark:bg-zinc-900/40 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-800 dark:border-zinc-700 rounded-xl px-4 py-2.5 outline-none focus:border-indigo-500" placeholder="John Doe" />
+                <input required type="text" value={newUser.name || ""} onChange={e => setNewUser({...newUser, name: e.target.value})} className="w-full bg-slate-50 dark:bg-zinc-900/40 dark:bg-zinc-900/40 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-800 dark:border-zinc-700 rounded-xl px-4 py-2.5 outline-none focus:border-indigo-500" placeholder="John Doe (Candidate)" />
               </div>
               <div>
                 <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">Email Address</label>

@@ -77,7 +77,7 @@ export default function SaaSSecurityView() {
           <div className="flex gap-4 items-start">
             <span className="text-zinc-500 w-24 shrink-0">10:41:12 UTC</span>
             <span className="text-amber-400 font-bold shrink-0">[WARNING]</span>
-            <span className="text-zinc-300">High rate of failed logins for tenant gia.erp.example.com. Rate limiting applied.</span>
+            <span className="text-zinc-300">High rate of failed logins for tenant kochi.csp.asapkerala.gov.in. Rate limiting applied.</span>
           </div>
           <div className="flex gap-4 items-start">
             <span className="text-zinc-500 w-24 shrink-0">10:35:00 UTC</span>

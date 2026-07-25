@@ -13,9 +13,9 @@ export default function TimetableManagementView() {
   const timeSlots = ["08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM"];
   
   const mockSchedule: Record<string, any> = {
-    "Monday-08:00 AM": { subject: "Mathematics", teacher: "Prof. Michael Chang", room: "Room 101", type: "Core" },
-    "Monday-09:00 AM": { subject: "Physics", teacher: "Dr. Sarah Jenkins", room: "Chemistry Lab", type: "Lab" },
-    "Tuesday-10:00 AM": { subject: "Biology", teacher: "Dr. Emily Blunt", room: "Room 102", type: "Core" },
+    "Monday-08:00 AM": { subject: "React.js Frontend", teacher: "Master Trainer Michael Chang", room: "Room 101", type: "Core" },
+    "Monday-09:00 AM": { subject: "Node.js Backend", teacher: "Trainer Sarah Jenkins", room: "Chemistry Lab", type: "Lab" },
+    "Tuesday-10:00 AM": { subject: "Biology", teacher: "Trainer Emily Blunt", room: "Room 102", type: "Core" },
   };
 
   return (

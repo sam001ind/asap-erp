@@ -487,7 +487,7 @@ function AdmissionsContent() {
                 </div>
                 
                 <div className="bg-[#dcf8c6] dark:bg-[#056162] p-3 rounded-xl rounded-tr-sm self-end max-w-[80%] shadow-sm text-sm dark:text-white relative">
-                   <p>Hi {whatsappContact.name.split(' ')[0]}, thanks for your interest in My Institution! Would you like to schedule a campus tour?</p>
+                   <p>Hi {whatsappContact.name.split(' ')[0]}, thanks for your interest in ASAP Kerala! Would you like to schedule a campus tour?</p>
                    <span className="text-[10px] text-[#075e54]/70 dark:text-white/50 flex justify-end items-center gap-1 mt-1">10:05 AM <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6L9 17l-5-5"></path></svg></span>
                 </div>
              </div>

@@ -36,8 +36,8 @@ const SaaSContext = createContext<SaaSContextType | undefined>(undefined);
 const MOCK_TENANTS: Tenant[] = [
   {
     id: "t_101",
-    name: "Springfield High",
-    domain: "springfield.erp.example.com",
+    name: "ASAP Kerala - Trivandrum CSP",
+    domain: "trivandrum.csp.asapkerala.gov.in",
     logoUrl: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop",
     databaseStatus: "Active",
     dbUrlMasked: "postgres://saas_***:***@aws-pooler.supabase.com:5432/tenant_101",
@@ -49,8 +49,8 @@ const MOCK_TENANTS: Tenant[] = [
   },
   {
     id: "t_102",
-    name: "Global International Academy",
-    domain: "gia.erp.example.com",
+    name: "ASAP Kerala - Kochi CSP",
+    domain: "kochi.csp.asapkerala.gov.in",
     databaseStatus: "Active",
     dbUrlMasked: "postgres://saas_***:***@aws-pooler.supabase.com:5432/tenant_102",
     securityLevel: "Extreme",
@@ -61,8 +61,8 @@ const MOCK_TENANTS: Tenant[] = [
   },
   {
     id: "t_103",
-    name: "Lincoln Prep",
-    domain: "lincoln.erp.example.com",
+    name: "ASAP Kerala - Kozhikode CSP",
+    domain: "kozhikode.csp.asapkerala.gov.in",
     databaseStatus: "Failed",
     dbUrlMasked: "postgres://saas_***:***@aws-pooler.supabase.com:5432/tenant_103",
     securityLevel: "Standard",

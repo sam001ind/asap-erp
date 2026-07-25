@@ -56,7 +56,7 @@ export default function AcademicAdvisingView() {
              <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-zinc-800/40 dark:bg-zinc-900/40 dark:hover:bg-zinc-800/40 dark:bg-zinc-900/40 dark:hover:bg-zinc-800 transition-colors border border-transparent hover:border-slate-200 dark:border-zinc-800 dark:hover:border-zinc-700">
                 <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-zinc-800 flex items-center justify-center text-slate-500 dark:text-slate-400 font-bold shrink-0">JD</div>
                 <div className="flex-1">
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">John Doe (10-A)</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">John Doe (Candidate) (10-A)</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-1"><CalendarIcon className="h-3 w-3" /> Today, 2:00 PM</p>
                 </div>
                 <button className="p-2 bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400 rounded-lg"><MessageSquare className="h-4 w-4" /></button>

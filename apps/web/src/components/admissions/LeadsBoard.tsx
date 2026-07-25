@@ -179,7 +179,7 @@ export function LeadsBoard() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1 dark:text-slate-300">Student Name</label>
+                  <label className="block text-sm font-medium mb-1 dark:text-slate-300">Candidate Name</label>
                   <input required type="text" value={formData.studentName} onChange={e => setFormData({...formData, studentName: e.target.value})} className="w-full rounded-xl border px-4 py-2 dark:bg-zinc-950 dark:border-zinc-800" />
                 </div>
                 <div>

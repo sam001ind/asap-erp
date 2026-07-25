@@ -45,7 +45,7 @@ export default function AcademicMonitoringView() {
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{c.name}</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Class Incharge: Prof. Michael Chang</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">Class Incharge: Master Trainer Michael Chang</p>
                 </div>
                 <div className={`p-2 rounded-xl flex items-center gap-2 font-bold ${statusColor}`}>
                   {isCritical ? <AlertTriangle className="h-5 w-5" /> : <CheckCircle2 className="h-5 w-5" />}

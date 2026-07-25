@@ -70,7 +70,7 @@ export default function AcademicAttendanceView() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border-b border-slate-200 dark:border-zinc-800 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">
-                <th className="px-6 py-4 font-bold">Student Name</th>
+                <th className="px-6 py-4 font-bold">Candidate Name</th>
                 <th className="px-6 py-4 font-bold">Class</th>
                 <th className="px-6 py-4 font-bold">Overall %</th>
                 <th className="px-6 py-4 font-bold">Worst Subject</th>
@@ -79,19 +79,19 @@ export default function AcademicAttendanceView() {
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-zinc-800 dark:divide-zinc-800 dark:divide-zinc-800">
               <tr className="hover:bg-slate-50 dark:hover:bg-zinc-800/40 dark:bg-zinc-900/40 dark:hover:bg-zinc-800/40 dark:bg-zinc-900/40/50 dark:hover:bg-zinc-800/30 transition-colors">
-                <td className="px-6 py-4 font-bold text-slate-900 dark:text-white">John Doe <span className="block text-xs font-normal text-slate-500 dark:text-slate-400">STU-1029</span></td>
+                <td className="px-6 py-4 font-bold text-slate-900 dark:text-white">John Doe (Candidate) <span className="block text-xs font-normal text-slate-500 dark:text-slate-400">STU-1029</span></td>
                 <td className="px-6 py-4 text-sm">10-A</td>
                 <td className="px-6 py-4"><span className="text-red-500 font-bold bg-red-50 dark:bg-red-900/20 px-2 py-1 rounded">68%</span></td>
-                <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">Mathematics (60%)</td>
+                <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">React.js Frontend (60%)</td>
                 <td className="px-6 py-4 text-right">
                    <button className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 text-sm font-semibold">Send Warning</button>
                 </td>
               </tr>
               <tr className="hover:bg-slate-50 dark:hover:bg-zinc-800/40 dark:bg-zinc-900/40 dark:hover:bg-zinc-800/40 dark:bg-zinc-900/40/50 dark:hover:bg-zinc-800/30 transition-colors">
-                <td className="px-6 py-4 font-bold text-slate-900 dark:text-white">Jane Smith <span className="block text-xs font-normal text-slate-500 dark:text-slate-400">STU-1144</span></td>
+                <td className="px-6 py-4 font-bold text-slate-900 dark:text-white">Jane Smith (Candidate) <span className="block text-xs font-normal text-slate-500 dark:text-slate-400">STU-1144</span></td>
                 <td className="px-6 py-4 text-sm">11-B</td>
                 <td className="px-6 py-4"><span className="text-red-500 font-bold bg-red-50 dark:bg-red-900/20 px-2 py-1 rounded">71%</span></td>
-                <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">Physics (65%)</td>
+                <td className="px-6 py-4 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">Node.js Backend (65%)</td>
                 <td className="px-6 py-4 text-right">
                    <button className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 text-sm font-semibold">Send Warning</button>
                 </td>

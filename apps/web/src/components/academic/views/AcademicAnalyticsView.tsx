@@ -13,7 +13,7 @@ const attendanceData = [
 
 const gradeData = [
   { subject: 'Math', avg: 78, max: 100 },
-  { subject: 'Physics', avg: 72, max: 100 },
+  { subject: 'Node.js Backend', avg: 72, max: 100 },
   { subject: 'Chemistry', avg: 81, max: 100 },
   { subject: 'Biology', avg: 85, max: 100 },
   { subject: 'English', avg: 88, max: 100 },

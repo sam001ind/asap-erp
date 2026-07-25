@@ -129,7 +129,7 @@ export default function ChannelsView() {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100">Connect to {authenticatingChannel.platform}</h2>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
-                    You will be redirected to {authenticatingChannel.platform} to securely authenticate and grant permissions to My Institution.
+                    You will be redirected to {authenticatingChannel.platform} to securely authenticate and grant permissions to ASAP Kerala.
                   </p>
                 </>
               )}
@@ -155,7 +155,7 @@ export default function ChannelsView() {
                   </div>
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100">Authorize Application</h2>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
-                    My Institution is requesting access to your {authenticatingChannel.platform} account.
+                    ASAP Kerala is requesting access to your {authenticatingChannel.platform} account.
                   </p>
                 </>
               )}

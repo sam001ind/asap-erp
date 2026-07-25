@@ -64,7 +64,7 @@ export default function TenantListView() {
                 </td>
                 <td className="p-4 text-sm text-slate-500 dark:text-slate-400">
                   <div className="flex flex-col gap-1.5 items-start">
-                    <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm \${tenant.planType === 'Enterprise' ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300' : tenant.planType === 'Pro' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300' : 'bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-slate-300'}`}>
+                    <span className={`inline-flex items-center px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider \${tenant.planType === 'Enterprise' ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300' : tenant.planType === 'Pro' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300' : 'bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-slate-300'}`}>
                       {tenant.planType || 'Free'}
                     </span>
                     <span className="flex items-center gap-1.5 w-fit">
