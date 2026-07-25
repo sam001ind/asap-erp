@@ -36,7 +36,7 @@ export default function DashboardView() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">Institution Media Overview</h1>
-          <p className="text-slate-500 dark:text-slate-400">Welcome back! Here&apos;s what&apos;s happening across your school network today.</p>
+          <p className="text-slate-500 dark:text-slate-400">Welcome back! Here&apos;s what&apos;s happening across your training network today.</p>
         </div>
         <select 
           value={activeBrand} 

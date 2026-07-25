@@ -89,7 +89,7 @@ export const Blocks: Record<string, React.FC<{ props: any }>> = {
 
           <div className="relative group cursor-pointer py-8">
             <span className="text-sm font-semibold text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 hover:text-blue-600 dark:text-zinc-300 transition-colors flex items-center gap-1">
-              {props.navAdm || "Admissions"} <span className="text-[10px]">▼</span>
+              {props.navAdm || "Enrollments"} <span className="text-[10px]">▼</span>
             </span>
             <div className="absolute top-20 left-0 w-48 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-100 dark:border-zinc-800 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-2 group-hover:translate-y-0">
               <a href="/site/admissions-info" className="block px-4 py-3 text-sm text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/40 dark:bg-zinc-950 dark:hover:bg-zinc-800/40 dark:bg-zinc-950 dark:hover:bg-zinc-800 hover:text-blue-600 transition-colors rounded-t-xl">{props.navAdm1 || "Overview"}</a>
@@ -252,9 +252,9 @@ export const Blocks: Record<string, React.FC<{ props: any }>> = {
           <div>
              <label className="block text-xs font-semibold text-zinc-500 dark:text-zinc-400 dark:text-zinc-400 uppercase tracking-widest mb-2">{props.labelProgram || "Program of Interest"}</label>
              <select className="w-full bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-black border border-zinc-200 dark:border-zinc-800 rounded-xl px-4 py-3 focus:outline-none focus:border-zinc-400 transition-colors text-zinc-700 dark:text-zinc-300 dark:text-zinc-300 dark:text-zinc-300">
-                <option>{props.opt1 || "Primary School"}</option>
-                <option>{props.opt2 || "Middle School"}</option>
-                <option>{props.opt3 || "High School"}</option>
+                <option>{props.opt1 || "Foundation Course"}</option>
+                <option>{props.opt2 || "Advanced Skill Program"}</option>
+                <option>{props.opt3 || "DVoc Program"}</option>
              </select>
           </div>
           <button 
@@ -317,7 +317,7 @@ export const Blocks: Record<string, React.FC<{ props: any }>> = {
           {[
             { title: props.news1Title || "Institution receives Grade A++ Accreditation", date: props.news1Date || "May 28, 2026" },
             { title: props.news2Title || "New AI Research Lab inaugurated by the Chief Minister", date: props.news2Date || "May 15, 2026" },
-            { title: props.news3Title || "Admissions open for Fall 2026 Batch", date: props.news3Date || "May 10, 2026" }
+            { title: props.news3Title || "Enrollments open for Fall 2026 Batch", date: props.news3Date || "May 10, 2026" }
           ].map((news, i) => (
             <div key={i} className="flex gap-6 items-start pb-6 border-b border-zinc-100 dark:border-zinc-900 group cursor-pointer">
               <div className="w-16 h-16 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex-shrink-0 flex items-center justify-center text-xl">
@@ -337,7 +337,7 @@ export const Blocks: Record<string, React.FC<{ props: any }>> = {
     <footer className={`bg-black text-white py-16 border-t border-zinc-900 ${props.typographyClass || ''}`}>
       <div className="max-w-5xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
-          <h2 className="text-2xl font-bold mb-4">{props.schoolName || "Institution Name"}</h2>
+          <h2 className="text-2xl font-bold mb-4">{props.schoolName || "ASAP Kerala CSP"}</h2>
           <p className="text-zinc-400 text-sm max-w-sm leading-relaxed">
             Empowering students to achieve their highest potential through innovative education and a supportive community.
           </p>
@@ -361,7 +361,7 @@ export const Blocks: Record<string, React.FC<{ props: any }>> = {
         </div>
       </div>
       <div className="max-w-6xl mx-auto px-8 mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 dark:text-zinc-400 dark:text-zinc-400">
-         <p>© {new Date().getFullYear()} {props.schoolName || "Institution Name"}. {props.copyrightText || "All rights reserved."}</p>
+         <p>© {new Date().getFullYear()} {props.schoolName || "ASAP Kerala CSP"}. {props.copyrightText || "All rights reserved."}</p>
          <div className="flex gap-4 mt-4 md:mt-0">
            <a href="#" className="hover:text-white">Privacy Policy</a>
            <a href="#" className="hover:text-white">Terms of Service</a>
@@ -516,16 +516,16 @@ export function resolveSectionProps(props: any, lang: string) {
 
 
 export const DEFAULT_PROPS: Record<string, any> = {
-  HeaderNavigation: { logoIcon: "🏛️", logoText: "Institution", ctaText: "Apply Now", navHome: "Home", navAbout: "About Us", navAbout1: "Overview", navAbout2: "Leadership Team", navAbout3: "History & Mission", navAcad: "Academics", navAcad1: "Overview", navAcad2: "Programs & Courses", navAcad3: "Faculty", navAdm: "Admissions", navAdm1: "Overview", navAdm2: "Fee Structure", navAdm3: "Apply Now", navCampus: "Campus Life", navCampus1: "Overview", navCampus2: "Events & News", navStudent: "Student Services" },
+  HeaderNavigation: { logoIcon: "🏛️", logoText: "Institution", ctaText: "Apply Now", navHome: "Home", navAbout: "About Us", navAbout1: "Overview", navAbout2: "Leadership Team", navAbout3: "History & Mission", navAcad: "Academics", navAcad1: "Overview", navAcad2: "Programs & Courses", navAcad3: "Faculty", navAdm: "Enrollments", navAdm1: "Overview", navAdm2: "Fee Structure", navAdm3: "Apply Now", navCampus: "Campus Life", navCampus1: "Overview", navCampus2: "Events & News", navStudent: "Student Services" },
   HeroBanner: { title: "Excellence in Education.", subtitle: "A world-class curriculum designed to shape the innovators and leaders of tomorrow.", ctaText: "Apply Now" },
   StatsRibbon: { stat1Label: "Students Trained", stat1Value: "10,000+", stat2Label: "Courses Offered", stat2Value: "50+", stat3Label: "Placement Percentage", stat3Value: "95%", stat4Label: "Industry Partners", stat4Value: "200+" },
   AboutSection: { title: "Our Vision & Mission", content: "We are dedicated to providing an enriching environment that fosters intellectual curiosity, emotional intelligence, and a strong sense of community.", awardTitle: "Award Winning Institution", awardSubtitle: "Ranked #1 in Regional Excellence" },
   ProgramsGrid: { title: "Featured Courses & Programs", prog1Name: "Computer Science B.Tech", prog1Duration: "4 Years", prog1Fee: "$15,000/yr", prog1Seats: "120 Seats", prog2Name: "MBA in Finance", prog2Duration: "2 Years", prog2Fee: "$25,000/yr", prog2Seats: "60 Seats", prog3Name: "Data Science Bootcamp", prog3Duration: "6 Months", prog3Fee: "$5,000", prog3Seats: "30 Seats" },
   Testimonials: { title: "Student Voices", quote: "The faculty here goes above and beyond...", author: "Jane Doe, Class of '24", role: "Software Engineer at Google" },
-  LeadCaptureForm: { title: "Ready to Join Us?", subtitle: "Provide your details and our admissions team will be in touch shortly.", labelName: "Full Name", labelEmail: "Email Address", labelProgram: "Program of Interest", opt1: "Primary School", opt2: "Middle School", opt3: "High School", btnText: "Submit Inquiry" },
+  LeadCaptureForm: { title: "Ready to Join Us?", subtitle: "Provide your details and our admissions team will be in touch shortly.", labelName: "Full Name", labelEmail: "Email Address", labelProgram: "Program of Interest", opt1: "Foundation Course", opt2: "Advanced Skill Program", opt3: "DVoc Program", btnText: "Submit Inquiry" },
   UpcomingEvents: { btnText: "View All Events →", title: "Upcoming Events", event1Title: "Open House 2026", event1Date: "June 15, 2026", event1Venue: "Main Auditorium", event2Title: "Alumni Meet", event2Date: "July 22, 2026", event2Venue: "Virtual", event3Title: "Tech Symposium", event3Date: "August 10, 2026", event3Venue: "Innovation Center" },
   RecruiterLogos: { title: "Our Top Recruiters" },
-  LatestNews: { btnText: "Read More →", title: "Latest News & Announcements", news1Title: "Institution receives Grade A++ Accreditation", news1Date: "May 28, 2026", news2Title: "New AI Research Lab inaugurated by the Chief Minister", news2Date: "May 15, 2026", news3Title: "Admissions open for Fall 2026 Batch", news3Date: "May 10, 2026" },
+  LatestNews: { btnText: "Read More →", title: "Latest News & Announcements", news1Title: "Institution receives Grade A++ Accreditation", news1Date: "May 28, 2026", news2Title: "New AI Research Lab inaugurated by the Chief Minister", news2Date: "May 15, 2026", news3Title: "Enrollments open for Fall 2026 Batch", news3Date: "May 10, 2026" },
   Footer: { schoolName: "Institution Name", link1: "About Us", link2: "Academics", link3: "Admissions", link4: "Contact Us", address: "123 University Avenue, Knowledge City, ST 12345", phone: "(555) 123-4567", email: "admissions@institution.edu", copyrightText: "All rights reserved." },
   PricingTable: { title: "Fee Structure", subtitle: "Transparent pricing with no hidden costs. Invest in a world-class education.", tier1Name: "Basic", tier1Desc: "Perfect for standard enrollment.", tier1Price: "$5,000", tier1Feature1: "Access to all online resources", tier1Feature2: "Basic Library Access", tier1Feature3: "Standard Placement Support", tier2Name: "Premium", tier2Desc: "Advanced features and mentorship.", tier2Price: "$8,500", tier2Feature1: "1-on-1 Mentorship", tier2Feature2: "Premium Library Access", tier2Feature3: "Guaranteed Placement Support", ctaText: "Apply Now" },
   TextContent: { title: "Our Story", paragraph1: "Founded with a vision to redefine education, we have consistently pushed the boundaries of what is possible. Our commitment to excellence is reflected in our state-of-the-art facilities, world-class faculty, and innovative curriculum.", paragraph2: "We believe in fostering an environment where curiosity thrives and potential is realized. Our graduates go on to become leaders in their respective fields, equipped with the knowledge and skills necessary to make a lasting impact on the world." }
@@ -1432,7 +1432,7 @@ localStorage.setItem('site_language', 'ml');
                 {selectedSection.type === 'Footer' && (
                   <>
                     <div>
-                      <label className="block text-xs font-bold text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 dark:text-zinc-400 mb-1">School Name</label>
+                      <label className="block text-xs font-bold text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 dark:text-zinc-400 mb-1">SDC / CSP Name</label>
                       <input type="text" value={getPropValue('schoolName')} onChange={(e) => updateSectionProp('schoolName', e.target.value)} className="w-full bg-zinc-50 dark:bg-zinc-950 dark:bg-zinc-950 dark:bg-black border border-zinc-200 dark:border-zinc-800 dark:border-zinc-700 rounded-lg px-3 py-2 text-sm outline-none" />
                     </div>
                   <details className="mt-4">

@@ -87,7 +87,7 @@ export function LeadsBoard() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Admissions Pipeline</h2>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Enrollments Pipeline</h2>
           <p className="text-slate-500 dark:text-slate-400">Track and manage prospective student enquiries.</p>
         </div>
         <button 

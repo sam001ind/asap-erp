@@ -178,7 +178,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
 
               <div className="h-6 w-px bg-zinc-200 dark:bg-zinc-700 hidden sm:block"></div>
 
-              {/* Global Academic Year Switcher */}
+              {/* Global Financial Year Switcher */}
               <div className="relative group">
                 <button className="flex items-center gap-2 text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 hover:text-indigo-600 dark:text-zinc-300 dark:hover:text-indigo-400 transition-all duration-300 bg-white dark:bg-zinc-900/50 backdrop-blur-md/50 dark:bg-zinc-800/30 hover:bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:hover:bg-zinc-800 backdrop-blur-md px-3 py-2 rounded-xl font-bold text-sm shadow-sm hover:shadow-md border border-white/40 dark:border-white/5">
                   📅 {getActiveYear()?.name}
@@ -187,7 +187,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 {/* Dropdown */}
                 <div className="absolute right-0 mt-3 w-48 bg-white dark:bg-zinc-900/50 backdrop-blur-md/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-2xl shadow-2xl border border-white/40 dark:border-zinc-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top-right scale-95 group-hover:scale-100 overflow-hidden">
                   <div className="p-3 border-b border-zinc-100 dark:border-zinc-800">
-                    <p className="text-xs font-bold text-zinc-500 dark:text-zinc-400 dark:text-zinc-400 uppercase tracking-wider">Select Academic Year</p>
+                    <p className="text-xs font-bold text-zinc-500 dark:text-zinc-400 dark:text-zinc-400 uppercase tracking-wider">Select Financial Year</p>
                   </div>
                   <div className="max-h-60 overflow-y-auto p-1">
                     {academicYears.map(year => (

@@ -7,7 +7,7 @@ export default function ThemeSettings() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [theme, setTheme] = useState({
-    siteName: "Acme School",
+    siteName: "ASAP Kerala CSP",
     tagline: "Empowering the future",
     logoUrl: "",
     primaryColor: "#3b82f6",
@@ -275,7 +275,7 @@ export default function ThemeSettings() {
           <div className="w-3 h-3 rounded-full bg-amber-400"></div>
           <div className="w-3 h-3 rounded-full bg-green-400"></div>
           <div className="mx-auto bg-white dark:bg-zinc-800 rounded-md px-24 py-1 text-xs text-zinc-500 font-medium font-mono text-center shadow-inner">
-            https://your-school.edu
+            https://asapkerala.gov.in
           </div>
         </div>
 

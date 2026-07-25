@@ -17,7 +17,7 @@ function AcademicManagementContent() {
             <div className="p-2.5 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl">
               <BookOpen className="w-6 h-6" />
             </div>
-            Academic Management
+            Program Management
           </h1>
           <p className="text-slate-500 dark:text-slate-400 mt-2">Manage classes, subjects, and curriculum.</p>
         </div>

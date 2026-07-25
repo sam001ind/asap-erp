@@ -3,17 +3,17 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('Seeding Test School...');
+  console.log('Seeding ASAP Kerala CSP...');
 
   // Create the Tenant
   const school = await prisma.tenant.upsert({
-    where: { domain: "apex.edu" },
+    where: { domain: "asapkerala.gov.in" },
     update: {
       logoUrl: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop',
     },
     create: {
-      name: "Apex International Academy",
-      domain: "apex.edu",
+      name: "ASAP Kerala - Trivandrum CSP",
+      domain: "asapkerala.gov.in",
       logoUrl: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop',
       status: "Active"
     }
@@ -66,7 +66,7 @@ async function main() {
     console.log(`Created user ${user.email} for tenant ${school.name}`);
   }
 
-  console.log('Finished seeding Test School.');
+  console.log('Finished seeding ASAP Kerala CSP.');
 }
 
 main()

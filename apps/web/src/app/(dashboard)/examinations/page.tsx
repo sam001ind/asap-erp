@@ -19,7 +19,7 @@ function ExaminationsContent() {
             </div>
             Examinations
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-2">Schedule exams, grade students, and publish results.</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-2">Schedule exams, grade candidates, and publish results.</p>
         </div>
         
         <div className="flex items-center gap-3">

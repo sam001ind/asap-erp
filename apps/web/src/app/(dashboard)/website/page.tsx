@@ -21,7 +21,7 @@ function WebsiteContent() {
       setSitePublished(savedSiteState === 'true');
     }
 
-    const allPages = ['home', 'about', 'about-leadership', 'about-history', 'academics', 'academics-programs', 'academics-faculty', 'admissions-info', 'admissions-fees', 'admissions-apply', 'campus-life', 'campus-events', 'student-services'];
+    const allPages = ['home', 'about', 'about-leadership', 'about-history', 'academics', 'academics-programs', 'academics-faculty', 'admissions-info', 'admissions-fees', 'admissions-apply', 'campus-life', 'campus-events', 'candidate-services'];
     const loadedPagesState: Record<string, boolean> = {};
     allPages.forEach(p => {
       const savedPageState = localStorage.getItem(`page_published_${p}`);
@@ -151,7 +151,7 @@ function WebsiteContent() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-zinc-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center text-lg">📚</div>
                   <div>
-                    <p className="font-bold text-lg dark:text-white text-zinc-900 dark:text-white">Academics</p>
+                    <p className="font-bold text-lg dark:text-white text-zinc-900 dark:text-white">Skill Programs</p>
                     <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">/academics</p>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ function WebsiteContent() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-zinc-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center text-lg">🎓</div>
                   <div>
-                    <p className="font-bold text-lg dark:text-white text-zinc-900 dark:text-white">Admissions Portal</p>
+                    <p className="font-bold text-lg dark:text-white text-zinc-900 dark:text-white">Enrollments Portal</p>
                     <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">/admissions-info</p>
                   </div>
                 </div>
@@ -263,20 +263,20 @@ function WebsiteContent() {
               </div>
             </div>
 
-            {/* Student Services */}
+            {/* Candidate Services */}
             <div className="p-5 border border-zinc-100 dark:border-zinc-800 rounded-xl hover:shadow-md transition-shadow">
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-zinc-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center text-lg">🤝</div>
                   <div>
-                    <p className="font-bold text-lg dark:text-white text-zinc-900 dark:text-white">Student Services</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">/student-services</p>
+                    <p className="font-bold text-lg dark:text-white text-zinc-900 dark:text-white">Candidate Services</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">/candidate-services</p>
                   </div>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <button onClick={() => togglePagePublished("student-services")} className={`text-sm font-bold px-4 py-1.5 rounded-full transition-colors ${publishedPages["student-services"] ? "text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 hover:bg-green-100 dark:hover:bg-green-900/50" : "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 hover:bg-amber-100 dark:hover:bg-amber-900/50"}`}>{publishedPages["student-services"] ? "Published" : "Draft"}</button>
-                  <a href="/site/student-services" target="_blank" rel="noopener noreferrer" className="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-1.5 rounded-lg font-medium text-sm hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors ml-2">Preview</a>
-                  <button onClick={() => handleEdit('student-services')} className="bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 dark:text-zinc-300 dark:text-zinc-300 px-4 py-1.5 rounded-lg font-medium text-sm hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors ml-2">Edit Template</button>
+                  <button onClick={() => togglePagePublished("candidate-services")} className={`text-sm font-bold px-4 py-1.5 rounded-full transition-colors ${publishedPages["candidate-services"] ? "text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 hover:bg-green-100 dark:hover:bg-green-900/50" : "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 hover:bg-amber-100 dark:hover:bg-amber-900/50"}`}>{publishedPages["candidate-services"] ? "Published" : "Draft"}</button>
+                  <a href="/site/candidate-services" target="_blank" rel="noopener noreferrer" className="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-1.5 rounded-lg font-medium text-sm hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors ml-2">Preview</a>
+                  <button onClick={() => handleEdit('candidate-services')} className="bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 dark:text-zinc-300 dark:text-zinc-300 px-4 py-1.5 rounded-lg font-medium text-sm hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors ml-2">Edit Template</button>
                   <button className="text-zinc-400 hover:text-zinc-600 dark:text-zinc-300 dark:text-zinc-300 ml-2">⚙️</button>
                 </div>
               </div>

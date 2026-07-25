@@ -27,7 +27,7 @@ export default function TenantListView() {
           <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
             <Server className="h-5 w-5 text-indigo-500" /> Active Tenants
           </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Manage isolated databases and school instances.</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Manage isolated databases and CSP instances.</p>
         </div>
         <div className="relative w-full md:w-72">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />

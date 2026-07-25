@@ -92,7 +92,7 @@ export default function MarkAttendanceView() {
               <CalendarCheck className="h-6 w-6 text-indigo-500" />
               <h2 className="text-lg font-bold text-slate-900 dark:text-white">Manual Roster</h2>
             </div>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">Select a date and class to manually mark attendance for students or staff who forgot their ID cards.</p>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">Select a date and class to manually mark attendance for candidates or trainers who forgot their ID cards.</p>
           </div>
           
           <div className="flex gap-4">
@@ -103,7 +103,7 @@ export default function MarkAttendanceView() {
               className="bg-slate-50 dark:bg-zinc-900/40 border border-slate-200 dark:border-zinc-800 text-slate-900 dark:text-white rounded-xl px-4 py-2 outline-none focus:border-indigo-500 flex-1"
             />
             <select className="bg-slate-50 dark:bg-zinc-900/40 border border-slate-200 dark:border-zinc-800 text-slate-900 dark:text-white rounded-xl px-4 py-2 outline-none focus:border-indigo-500 flex-1">
-              <option>All Students</option>
+              <option>All Candidates</option>
             </select>
           </div>
         </div>
@@ -137,11 +137,11 @@ export default function MarkAttendanceView() {
       <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden">
         <div className="p-6 border-b border-slate-200 dark:border-zinc-800 flex justify-between items-center bg-slate-50 dark:bg-zinc-900/40">
           <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <Users className="h-5 w-5 text-slate-400 dark:text-slate-500" /> Students Roster
+            <Users className="h-5 w-5 text-slate-400 dark:text-slate-500" /> Candidates Roster
           </h3>
           <div className="relative">
             <Search className="h-4 w-4 absolute left-3 top-2.5 text-slate-400" />
-            <input type="text" placeholder="Search student..." className="pl-9 pr-4 py-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-slate-200 dark:border-zinc-800 rounded-lg text-sm outline-none focus:border-indigo-500 w-64" />
+            <input type="text" placeholder="Search candidate..." className="pl-9 pr-4 py-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-slate-200 dark:border-zinc-800 rounded-lg text-sm outline-none focus:border-indigo-500 w-64" />
           </div>
         </div>
         
@@ -149,7 +149,7 @@ export default function MarkAttendanceView() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 dark:bg-zinc-900/40 border-b border-slate-200 dark:border-zinc-800">
-                <th className="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Student Name</th>
+                <th className="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Candidate Name</th>
                 <th className="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Admission No</th>
                 <th className="p-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-right">Mark Status</th>
               </tr>
@@ -161,7 +161,7 @@ export default function MarkAttendanceView() {
                 </tr>
               ) : students.length === 0 ? (
                 <tr>
-                  <td colSpan={3} className="p-8 text-center text-slate-500">No students found.</td>
+                  <td colSpan={3} className="p-8 text-center text-slate-500">No candidates found.</td>
                 </tr>
               ) : (
                 students.map(student => {

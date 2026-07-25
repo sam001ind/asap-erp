@@ -79,7 +79,7 @@ export default function ProvisioningWizard() {
         
         <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 dark:before:via-zinc-700 before:to-transparent">
           {[
-            { num: 1, title: "School Details", desc: "Basic tenant identity." },
+            { num: 1, title: "CSP Details", desc: "Basic tenant identity." },
             { num: 2, title: "Database & Cloud", desc: "Select engine & provider." },
             { num: 3, title: "Security Policies", desc: "Isolation and encryption." },
             { num: 4, title: "Run Provisioner", desc: "Schema migrations." }
@@ -104,7 +104,7 @@ export default function ProvisioningWizard() {
             <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Step 1: Tenant Identity</h3>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">School / Institution Name</label>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">SDC / CSP Name</label>
                 <input type="text" value={tenantName} onChange={e => setTenantName(e.target.value)} placeholder="e.g. Springfield High" className="w-full px-4 py-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" />
               </div>
               <div>

@@ -19,7 +19,7 @@ function AdmissionsContent() {
       {activeTab === "dashboard" && (
         <div className="space-y-8 animate-in fade-in duration-500">
           <header>
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Admissions Dashboard</h1>
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Enrollments Dashboard</h1>
             <p className="text-slate-500 dark:text-slate-400 mt-2">Real-time view of admission status and funnel analytics.</p>
           </header>
           
@@ -99,7 +99,7 @@ function AdmissionsContent() {
                ))}
             </div>
             
-            <h3 className="text-xl font-bold mb-6 dark:text-white">Section 1: Student Basic Details</h3>
+            <h3 className="text-xl font-bold mb-6 dark:text-white">Section 1: Candidate Basic Details</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                <div><label className="block text-sm font-medium mb-1">First Name</label><input type="text" className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 dark:bg-zinc-950 dark:bg-black px-4 py-2" /></div>
                <div><label className="block text-sm font-medium mb-1">Middle Name</label><input type="text" className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-950 dark:bg-zinc-950 dark:bg-black px-4 py-2" /></div>

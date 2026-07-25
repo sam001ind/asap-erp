@@ -27,7 +27,7 @@ export default function AcademicStructureView() {
             onClick={() => setActiveTab("hierarchy")}
             className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${activeTab === 'hierarchy' ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400' : 'text-slate-600 dark:text-slate-300 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-zinc-800/40 dark:bg-zinc-900/40 dark:hover:bg-zinc-800/40 dark:bg-zinc-900/40 dark:hover:bg-zinc-800'}`}
           >
-            Academic Hierarchy
+            Program Hierarchy
           </button>
           <button 
             onClick={() => setActiveTab("departments")}
@@ -62,7 +62,7 @@ export default function AcademicStructureView() {
               {/* Level 1 */}
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center">1</div>
-                <div className="flex-1 bg-slate-50 dark:bg-zinc-900/40 dark:bg-zinc-900/40 dark:bg-zinc-800 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 dark:border-zinc-700">Institution: Enterprise School</div>
+                <div className="flex-1 bg-slate-50 dark:bg-zinc-900/40 dark:bg-zinc-900/40 dark:bg-zinc-800 p-3 rounded-xl border border-slate-200 dark:border-zinc-800 dark:border-zinc-700">Institution: ASAP Kerala SDC</div>
               </div>
               
               {/* Level 2 */}
@@ -107,7 +107,7 @@ export default function AcademicStructureView() {
             
             <div className="space-y-4">
               <div className="bg-slate-50 dark:bg-zinc-900/40 dark:bg-zinc-900/40 dark:bg-zinc-800/50 p-4 rounded-xl border border-slate-200 dark:border-zinc-800 dark:border-zinc-700">
-                <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Academic Year Sync</h4>
+                <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Financial Year Sync</h4>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">Ensure current active year matches.</p>
                 <div className="flex items-center gap-2 text-sm">
                   <span className="w-2 h-2 rounded-full bg-emerald-500"></span> 2026-2027 Active
@@ -129,15 +129,15 @@ export default function AcademicStructureView() {
         <div className="space-y-6">
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md p-8 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white">Academic Years Configuration</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white">Financial Years Configuration</h2>
               <button onClick={() => setShowAddYear(true)} className="px-4 py-2 bg-indigo-50 text-indigo-600 dark:bg-indigo-900/20 dark:text-indigo-400 rounded-xl font-semibold text-sm flex items-center gap-2 hover:bg-indigo-100 transition-colors">
-                <Plus className="h-4 w-4" /> Add Academic Year
+                <Plus className="h-4 w-4" /> Add Financial Year
               </button>
             </div>
 
             {showAddYear && (
               <div className="mb-8 p-6 border border-indigo-100 dark:border-indigo-900/30 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10">
-                <h3 className="font-bold text-slate-900 dark:text-white mb-4">Create New Academic Year</h3>
+                <h3 className="font-bold text-slate-900 dark:text-white mb-4">Create New Financial Year</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1">Year Name</label>
@@ -153,7 +153,7 @@ export default function AcademicStructureView() {
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <button onClick={handleAddYear} className="px-4 py-2 bg-indigo-600 text-white rounded-xl font-bold text-sm shadow-md hover:bg-indigo-700">Save Academic Year</button>
+                  <button onClick={handleAddYear} className="px-4 py-2 bg-indigo-600 text-white rounded-xl font-bold text-sm shadow-md hover:bg-indigo-700">Save Financial Year</button>
                   <button onClick={() => setShowAddYear(false)} className="px-4 py-2 bg-slate-200 text-slate-700 dark:text-slate-300 dark:bg-zinc-800 dark:text-slate-300 rounded-xl font-bold text-sm hover:bg-slate-300 transition-colors">Cancel</button>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function AcademicStructureView() {
           
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md p-8 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm opacity-50 pointer-events-none">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Term Configurations (Locked)</h2>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">Please set an Academic Year as default to configure its internal terms.</p>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">Please set an Financial Year as default to configure its internal terms.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 border border-slate-200 dark:border-zinc-800 dark:border-zinc-700 rounded-2xl bg-slate-50 dark:bg-zinc-900/40 dark:bg-zinc-900/40 dark:bg-zinc-800/50 relative overflow-hidden">
                  <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
