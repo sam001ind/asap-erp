@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@repo/database";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export const dynamic = 'force-dynamic';
 
@@ -37,6 +38,40 @@ export default async function Home() {
       {/* Top Navigation / User Profile */}
       <div className="w-full max-w-7xl mx-auto px-6 py-6 flex justify-end items-center relative z-20">
         <div className="flex items-center gap-4 bg-white/70 dark:bg-zinc-900/50 backdrop-blur-md px-4 py-2 rounded-2xl border border-white dark:border-zinc-800 shadow-sm">
+          
+          <ThemeToggle />
+
+          <div className="relative group">
+            <button className="p-2 relative text-zinc-500 dark:text-zinc-400 dark:text-zinc-400 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400 transition-all duration-300 bg-white dark:bg-zinc-900/50 backdrop-blur-md/50 hover:bg-white dark:bg-zinc-900/50 backdrop-blur-md dark:bg-zinc-800/30 dark:hover:bg-zinc-800 backdrop-blur-md rounded-xl shadow-sm hover:shadow-md border border-white/40 dark:border-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-zinc-900 shadow-[0_0_8px_rgba(239,68,68,0.6)] animate-pulse"></span>
+            </button>
+            {/* Dropdown */}
+            <div className="absolute right-0 mt-3 w-80 bg-white dark:bg-zinc-900/50 backdrop-blur-md/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-2xl shadow-2xl border border-white/40 dark:border-zinc-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top-right scale-95 group-hover:scale-100">
+              <div className="p-4 border-b border-zinc-100 dark:border-zinc-800 flex justify-between items-center">
+                <h3 className="font-semibold text-zinc-900 dark:text-white">Notifications</h3>
+                <button className="text-xs text-blue-600 hover:text-blue-700 font-medium">Mark all read</button>
+              </div>
+              <div className="max-h-80 overflow-y-auto">
+                <div className="p-4 border-b border-zinc-50 dark:border-zinc-800/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/40 dark:bg-zinc-950 dark:hover:bg-zinc-800/40 dark:bg-zinc-950 dark:hover:bg-zinc-800/50 cursor-pointer transition-colors">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 shrink-0 h-2 w-2 rounded-full bg-blue-500"></div>
+                    <div>
+                      <p className="text-sm text-zinc-800 dark:text-zinc-200 dark:text-zinc-200 dark:text-zinc-200 font-medium">New Student Enrollment</p>
+                      <p className="text-xs text-zinc-500 dark:text-zinc-400 dark:text-zinc-400 mt-1">Pending approval for BCA batch.</p>
+                      <p className="text-[10px] text-zinc-400 mt-2 uppercase font-semibold">2 mins ago</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-3 border-t border-zinc-100 dark:border-zinc-800 text-center">
+                <button className="text-sm text-zinc-500 dark:text-zinc-400 dark:text-zinc-400 hover:text-zinc-700 dark:text-zinc-300 dark:text-zinc-300 font-medium">View all notifications</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-px h-8 bg-zinc-200 dark:bg-zinc-800 mx-1"></div>
+
           <div className="flex flex-col text-right hidden sm:flex">
             <span className="text-sm font-bold text-zinc-900 dark:text-white">Abhijith Thirutheri</span>
             <span className="text-xs text-zinc-500 dark:text-zinc-400">Super Admin</span>
@@ -44,7 +79,7 @@ export default async function Home() {
           <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-blue-500/20">
             A
           </div>
-          <div className="w-px h-8 bg-zinc-200 dark:bg-zinc-800 mx-2"></div>
+          <div className="w-px h-8 bg-zinc-200 dark:bg-zinc-800 mx-1"></div>
           <Link 
             href="/login" 
             className="text-sm font-semibold text-rose-600 dark:text-rose-400 hover:text-rose-700 dark:hover:text-rose-300 transition-colors flex items-center gap-1 bg-rose-50 dark:bg-rose-900/20 px-3 py-1.5 rounded-xl border border-rose-100 dark:border-rose-900/50"
