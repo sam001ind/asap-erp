@@ -171,80 +171,82 @@ export default function TenantListView() {
       </div>
 
       {editingTenant && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={() => !isSaving && setEditingTenant(null)}></div>
-          <div className="bg-white dark:bg-zinc-900 w-full max-w-md max-h-[90vh] rounded-2xl shadow-xl z-10 border border-slate-200 dark:border-zinc-800 flex flex-col overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
-              <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Settings className="w-4 h-4" /> Edit Configuration
-              </h3>
-              <button onClick={() => !isSaving && setEditingTenant(null)} className="p-1 text-slate-400 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            
-            <div className="p-6 space-y-4 overflow-y-auto flex-1">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ASAP Kerala Name</label>
-                <input 
-                  type="text" 
-                  value={editingTenant.name} 
-                  onChange={e => setEditingTenant({ ...editingTenant, name: e.target.value })}
-                  className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                />
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={() => !isSaving && setEditingTenant(null)}></div>
+            <div className="relative bg-white dark:bg-zinc-900 w-full max-w-md rounded-2xl shadow-xl z-10 border border-slate-200 dark:border-zinc-800 flex flex-col my-8">
+              <div className="px-6 py-4 border-b border-slate-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
+                <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <Settings className="w-4 h-4" /> Edit Configuration
+                </h3>
+                <button onClick={() => !isSaving && setEditingTenant(null)} className="p-1 text-slate-400 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded">
+                  <X className="w-5 h-5" />
+                </button>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Domain</label>
-                <input 
-                  type="text" 
-                  value={editingTenant.domain} 
-                  onChange={e => setEditingTenant({ ...editingTenant, domain: e.target.value })}
-                  className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                />
+              
+              <div className="p-6 space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">ASAP Kerala Name</label>
+                  <input 
+                    type="text" 
+                    value={editingTenant.name} 
+                    onChange={e => setEditingTenant({ ...editingTenant, name: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Domain</label>
+                  <input 
+                    type="text" 
+                    value={editingTenant.domain} 
+                    onChange={e => setEditingTenant({ ...editingTenant, domain: e.target.value })}
+                    className="w-full px-3 py-2 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+                <div>
+                  <LogoUploader 
+                    tenantId={editingTenant.id} 
+                    currentLogoUrl={editingTenant.logoUrl || null} 
+                    onUploadSuccess={(url) => setEditingTenant({ ...editingTenant, logoUrl: url })}
+                  />
+                </div>
               </div>
-              <div>
-                <LogoUploader 
-                  tenantId={editingTenant.id} 
-                  currentLogoUrl={editingTenant.logoUrl || null} 
-                  onUploadSuccess={(url) => setEditingTenant({ ...editingTenant, logoUrl: url })}
-                />
-              </div>
-            </div>
 
-            <div className="px-6 py-4 bg-slate-50 dark:bg-zinc-800/50 border-t border-slate-100 dark:border-zinc-800 flex justify-end gap-3 shrink-0">
-              <button 
-                onClick={() => setEditingTenant(null)}
-                disabled={isSaving}
-                className="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-lg hover:bg-slate-50 dark:hover:bg-zinc-700 disabled:opacity-50"
-              >
-                Cancel
-              </button>
-              <button 
-                onClick={async () => {
-                  setIsSaving(true);
-                  const res = await updateTenant(editingTenant.id, {
-                    name: editingTenant.name,
-                    domain: editingTenant.domain,
-                    logoUrl: editingTenant.logoUrl
-                  });
-                  
-                  if (res.success) {
-                    updateTenantDetails(editingTenant.id, {
+              <div className="px-6 py-4 bg-slate-50 dark:bg-zinc-800/50 border-t border-slate-100 dark:border-zinc-800 flex justify-end gap-3 shrink-0 rounded-b-2xl">
+                <button 
+                  onClick={() => setEditingTenant(null)}
+                  disabled={isSaving}
+                  className="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-lg hover:bg-slate-50 dark:hover:bg-zinc-700 disabled:opacity-50"
+                >
+                  Cancel
+                </button>
+                <button 
+                  onClick={async () => {
+                    setIsSaving(true);
+                    const res = await updateTenant(editingTenant.id, {
                       name: editingTenant.name,
                       domain: editingTenant.domain,
                       logoUrl: editingTenant.logoUrl
                     });
-                    setEditingTenant(null);
-                  } else {
-                    alert("Failed to update tenant: " + (res.error || "Unknown error"));
-                  }
-                  setIsSaving(false);
-                }}
-                disabled={isSaving}
-                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2"
-              >
-                {isSaving ? "Saving..." : "Save Changes"}
-              </button>
+                    
+                    if (res.success) {
+                      updateTenantDetails(editingTenant.id, {
+                        name: editingTenant.name,
+                        domain: editingTenant.domain,
+                        logoUrl: editingTenant.logoUrl
+                      });
+                      setEditingTenant(null);
+                    } else {
+                      alert("Failed to update tenant: " + (res.error || "Unknown error"));
+                    }
+                    setIsSaving(false);
+                  }}
+                  disabled={isSaving}
+                  className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2"
+                >
+                  {isSaving ? "Saving..." : "Save Changes"}
+                </button>
+              </div>
             </div>
           </div>
         </div>
