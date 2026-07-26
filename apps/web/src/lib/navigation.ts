@@ -114,8 +114,7 @@ export const moduleMenus: Record<string, ModuleMenu[]> = {
   ],
   "/saas": [
     { title: "Dashboard", id: "dashboard" },
-    { title: "ASAP Kerala Instances", id: "tenants" },
-    { title: "Provisioning Wizard", id: "provisioning" },
+    { title: "Instance Settings", id: "tenants" },
     { title: "Security Policies", id: "security" },
   ],
 };
