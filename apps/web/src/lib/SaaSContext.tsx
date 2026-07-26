@@ -33,45 +33,7 @@ type SaaSContextType = {
 
 const SaaSContext = createContext<SaaSContextType | undefined>(undefined);
 
-const MOCK_TENANTS: Tenant[] = [
-  {
-    id: "t_101",
-    name: "ASAP Kerala - Trivandrum CSP",
-    domain: "trivandrum.csp.asapkerala.gov.in",
-    logoUrl: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop",
-    databaseStatus: "Active",
-    dbUrlMasked: "postgres://saas_***:***@aws-pooler.supabase.com:5432/tenant_101",
-    securityLevel: "Standard",
-    createdAt: new Date("2025-01-15T08:00:00Z"),
-    storageUsedGB: 4.2,
-    planType: "Pro",
-    status: "Active"
-  },
-  {
-    id: "t_102",
-    name: "ASAP Kerala - Kochi CSP",
-    domain: "kochi.csp.asapkerala.gov.in",
-    databaseStatus: "Active",
-    dbUrlMasked: "postgres://saas_***:***@aws-pooler.supabase.com:5432/tenant_102",
-    securityLevel: "Extreme",
-    createdAt: new Date("2025-03-22T14:30:00Z"),
-    storageUsedGB: 18.7,
-    planType: "Enterprise",
-    status: "Active"
-  },
-  {
-    id: "t_103",
-    name: "ASAP Kerala - Kozhikode CSP",
-    domain: "kozhikode.csp.asapkerala.gov.in",
-    databaseStatus: "Failed",
-    dbUrlMasked: "postgres://saas_***:***@aws-pooler.supabase.com:5432/tenant_103",
-    securityLevel: "Standard",
-    createdAt: new Date("2026-05-10T11:00:00Z"),
-    storageUsedGB: 0.1,
-    planType: "Free",
-    status: "Suspended"
-  }
-];
+const MOCK_TENANTS: Tenant[] = [];
 
 const MOCK_METRICS: GlobalMetrics = {
   mrrHistory: [
